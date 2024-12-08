@@ -23,15 +23,15 @@ invalid_credentials = [
     }
 ]
 
-@pytest.fixture(scope="function", autouse=True)
+@pytest.fixture(scope='function', autouse=True)
 def before_each(page: Page):
     login_page = LoginPage(page)
     login_page.navigate()
     
 def test_TC001_successful_login(page: Page):
     login_page = LoginPage(page)
-    login_page.login_as("demouser", "abc123")
-    expect(page.locator('h2')).to_have_text("Invoice List")
+    login_page.login_as('demouser', 'abc123')
+    expect(page.get_by_role('heading')).to_have_text('Invoice List')
     expect(page).to_have_url(re.compile(r".*/account"))
 
 #This test will fail because last credentials are valid
