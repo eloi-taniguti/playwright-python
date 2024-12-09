@@ -34,7 +34,6 @@ def test_TC001_successful_login(page: Page):
     expect(page.get_by_role('heading')).to_have_text('Invoice List')
     expect(page).to_have_url(re.compile(r".*/account"))
 
-#This test will fail because last credentials are valid
 def test_TC002_invalid_credentials_login(page: Page):
     login_page = LoginPage(page)
     for user in invalid_credentials:
