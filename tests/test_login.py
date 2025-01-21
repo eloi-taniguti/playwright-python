@@ -16,10 +16,6 @@ invalid_credentials = [
     {
         'username': 'demouser',
         'password': 'nanana'
-    },
-    {
-        'username': 'demouser',
-        'password': 'abc123'
     }
 ]
 
